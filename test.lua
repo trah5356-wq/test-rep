@@ -1772,24 +1772,19 @@ local aa = {
         local l, m, n, o, p = e(k.Packages.Flipper), e(k.Creator), e(k.Acrylic), e(d.Parent.Assets), d.Parent
         local q, r, s = l.Spring.new, l.Instant.new, m.New
         return function(t)
-            local u = e(k)
-        
-            local v = {
-                Minimized = false,
-                Maximized = false,
-                Size = t.Size,
-                CurrentPos = 0,
-                Position = UDim2.fromOffset(
-                    j.ViewportSize.X / 2 - (t.Size and t.Size.X and t.Size.X.Offset or 0) / 2,
-                    j.ViewportSize.Y / 2 - (t.Size and t.Size.Y and t.Size.Y.Offset or 0) / 2
-                )
-            }
-        
-            local w = false
-            local x = nil
-            local y = nil
-            local z = nil
-        
+            local u, v, w, x, y, z =
+                e(k),
+                {
+                    Minimized = false,
+                    Maximized = false,
+                    Size = t.Size,
+                    CurrentPos = 0,
+                    Position = UDim2.fromOffset(
+                        j.ViewportSize.X / 2 - t.Size.X.Offset / 2,
+                        j.ViewportSize.Y / 2 - t.Size.Y.Offset / 2
+                    )
+                },
+                false
             local A, B = false
             local C = false
             v.AcrylicPaint = n.AcrylicPaint()
