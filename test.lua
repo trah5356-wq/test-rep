@@ -363,7 +363,7 @@ local aa = {
         function x.ToggleUI(C)
             if not x.Window then return end
             x.GUIVisible = not x.GUIVisible
-            local mainFrame = x.Window.Frame
+            local mainFrame = x.Window.Frame or x.Window
             if mainFrame then
                 if x.GUIVisible then
                     mainFrame.Visible = true
