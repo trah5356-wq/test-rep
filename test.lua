@@ -364,24 +364,9 @@ local aa = {
             if not x.Window then return end
             x.GUIVisible = not x.GUIVisible
             local mainFrame = x.Window.Frame or x.Window
-            if mainFrame then
-                if x.GUIVisible then
-                    mainFrame.Visible = true
-                    l:Create(mainFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
-                        Position = mainFrame.Position + UDim2.new(0, 0, 0, 0)
-                    }):Play()
-                else
-                    l:Create(mainFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In), {
-                        Position = mainFrame.Position + UDim2.new(0, 0, 0, 0)
-                    }):Play()
-                    task.delay(0.2, function()
-                        if not x.GUIVisible then
-                            mainFrame.Visible = false
-                        end
-                    end)
-                end
+            if mainFrame and mainFrame.Visible ~= nil then
+                mainFrame.Visible = x.GUIVisible
             end
-            -- Update button image to reflect state
             if x.ToggleButton then
                 x.ToggleButton.ImageTransparency = x.GUIVisible and 0 or 0.35
             end
