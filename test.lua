@@ -351,7 +351,7 @@ local aa = {
 
             -- Press animation
             imageButton.MouseButton1Down:Connect(function()
-                l:Create(imageButton, TweenInfo.new(0.1), {Size = UDim2.new(0.88, 0, 0.88, 0), Position = UDim2.new(0.06, 0, 0.06, 0)}):Play()
+                l:Create(imageButton, TweenInfo.new(0.1), {Size = UDim2.fromScale(0.88, 0.88), Position = UDim2.fromOffset(0, 0)}):Play()
             end)
             imageButton.MouseButton1Up:Connect(function()
                 l:Create(imageButton, TweenInfo.new(0.12), {Size = UDim2.fromScale(1, 1), Position = UDim2.new(0, 0, 0, 0)}):Play()
